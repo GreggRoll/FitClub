@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FitClub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to FitClub, {{ username }}!</h1>
+        <a href="{{ url_for('my_workouts') }}">My Workouts</a>
+    </div>
+
+    <!-- Chat Tab -->
+    <div id="chatTab" onclick="toggleChat()">My AI</div>
+
+    <!-- Chat Window -->
+    <div id="chatWindow">
+        <div id="messages"></div>
+        <div id="input">
+            <input id="messageInput" type="text" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+        </div>
+    </div>
+    <!-- JS link -->
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
