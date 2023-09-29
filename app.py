@@ -88,13 +88,6 @@ def save_workout():
         return redirect(url_for('my_workouts'))
     return redirect(url_for('login'))
 
-
-@socketio.on('message')
-def handle_message(message):
-    # Here, you can call OpenAI API to generate workout plans based on the message
-    # For now, just echo the message back
-    socketio.emit('message', message)
-
 if __name__ == '__main__':
     load_users()
     socketio.run(app, port=5001, debug=False)
