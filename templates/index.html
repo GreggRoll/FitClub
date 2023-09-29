@@ -2,26 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FitClub</title>
+    <title>Home - FitClub</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <div class="container">
-        <h1>Welcome to FitClub, {{ username }}!</h1>
-        <a href="{{ url_for('my_workouts') }}">My Workouts</a>
-    </div>
-
-    <!-- Chat Tab -->
-    <div id="chatTab" onclick="toggleChat()">My AI</div>
-
-    <!-- Chat Window -->
-    <div id="chatWindow">
-        <div id="messages"></div>
-        <div id="input">
-            <input id="messageInput" type="text" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+<body class="d-flex flex-column">
+    <div id="content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">FitClub</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/my_profile">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <div class="container mt-5">
+            <h1>Welcome to FitClub, {{ username }}!</h1>
+            <!-- User Info and Workouts Section -->
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- User Info -->
+                </div>
+                <div class="col-md-6">
+                    <!-- Workouts -->
+                </div>
+            </div>
         </div>
+        
+        {% include 'chat.html' %}
+        {% include 'footer.html' %}
     </div>
-    <!-- JS link -->
+    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

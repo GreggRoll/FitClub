@@ -1,137 +1,99 @@
-/* General Styles */
 body {
-    background-color: #15202b;
-    color: #e1e8ed;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
-}
-
-a {
-    color: #1da1f2;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Container */
-.container {
-    margin: auto;
-    max-width: 600px;
-    padding: 10px;
-}
-
-/* Form Styles */
-form {
-    background-color: #253341;
-    border: 1px solid #38444d;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-label, input, button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-input, button {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #1da1f2;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0c7abf;
-}
-/* Chat Tab */
-#chatTab {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #ccc; /* Grey Background */
-    color: #000;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    border-top: 1px solid #999; /* Grey border */
-}
-
-#chatTab:after {
-    content: '▲'; /* Upward arrow */
-    display: inline-block;
-    margin-left: 5px;
-}
-
-/* Chat Window */
-#chatWindow {
-    position: fixed;
-    bottom: 40px; /* Adjusted to be above chatTab */
-    right: 20px;
-    left: 20px;
-    max-height: 400px;
-    background-color: #253341;
-    border: 1px solid #38444d;
-    display: none;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    min-height: 100vh;
 }
 
-#chatWindow #messages {
-    overflow-y: auto;
-    padding: 10px;
+#content {
+    flex: 1;
 }
-
-#chatWindow #input {
-    padding: 10px;
-    border-top: 1px solid #38444d;
-}
-
-#chatWindow input {
+#chatContainer {
+    position: fixed;
+    bottom: 4rem; /* Adjust as per your footer's height */
+    left: 0;
     width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
 }
 
-/* Chat Styles */
-#chat {
-    background-color: #253341;
-    border: 1px solid #38444d;
-    padding: 10px;
-    height: 300px;
+#chatTab {
+    position: relative;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+}
+
+#chatWindow {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Positioned just above the #chatTab */
+    left: 0;
+    width: 100%; /* Span the full width of the page */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom: none; /* Remove bottom border as it connects with #chatTab */
+    box-shadow: 0 0 10px #ccc;
+}
+
+#messages {
+    height: 15rem; /* Adjust as per your design preference */
     overflow-y: scroll;
-    margin-bottom: 10px;
+    padding: 0.5rem;
+}
+
+#input {
+    background-color: #f1f1f1;
+    padding: 0.5rem;
+    text-align: center; /* Centers the inline or inline-block children */
 }
 
 #messageInput {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    width: calc(100% - 20px);
+    width: 90%; /* Set the width to 90% of the parent container */
+    padding: 0.5rem;
+    margin: 0 auto; /* Centers the block element */
+    display: inline-block; /* Makes the input display as an inline-block element to be centered by text-align */
 }
 
-/* List Styles */
-ul {
-    list-style-type: none;
-    padding: 0;
+#profileContainer {
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
 }
 
-li {
-    background-color: #253341;
-    border: 1px solid #38444d;
-    padding: 10px;
-    margin-bottom: 10px;
+#profileHeader {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#profileContent {
+    padding: 1rem;
+}
+
+.profileRow {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+input {
+    width: 60%;
+    padding: 0.5rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 0.5em; /* Adjust padding as needed */
+    line-height: 1.2; /* Adjust line-height as needed */
 }
