@@ -7,14 +7,15 @@ body {
 #content {
     flex: 1;
 }
-#chatContainer {
+
+#chatContainer, #workoutGifContainer {
     position: fixed;
-    bottom: 4rem; /* Adjust as per your footer's height */
+    bottom: 4rem;
     left: 0;
     width: 100%;
 }
 
-#chatTab {
+#chatTab, #closeGifBtn {
     position: relative;
     background-color: #007bff;
     color: white;
@@ -23,20 +24,20 @@ body {
     cursor: pointer;
 }
 
-#chatWindow {
+#chatWindow, #workoutGif {
     display: none;
     position: absolute;
-    bottom: 100%; /* Positioned just above the #chatTab */
+    bottom: 100%;
     left: 0;
-    width: 100%; /* Span the full width of the page */
+    width: 100%;
     background-color: white;
     border: 1px solid #ccc;
-    border-bottom: none; /* Remove bottom border as it connects with #chatTab */
+    border-bottom: none;
     box-shadow: 0 0 10px #ccc;
 }
 
 #messages {
-    height: 15rem; /* Adjust as per your design preference */
+    height: 15rem;
     overflow-y: scroll;
     padding: 0.5rem;
 }
@@ -44,14 +45,14 @@ body {
 #input {
     background-color: #f1f1f1;
     padding: 0.5rem;
-    text-align: center; /* Centers the inline or inline-block children */
+    text-align: center;
 }
 
 #messageInput {
-    width: 90%; /* Set the width to 90% of the parent container */
+    width: 90%;
     padding: 0.5rem;
-    margin: 0 auto; /* Centers the block element */
-    display: inline-block; /* Makes the input display as an inline-block element to be centered by text-align */
+    margin: 0 auto;
+    display: inline-block;
 }
 
 #profileContainer {
@@ -79,7 +80,7 @@ body {
 .input-group {
     display: flex;
     align-items: center;
-    gap: 10px; /* Provides a gap between the label and the input */
+    gap: 10px;
 }
 
 label {
@@ -101,8 +102,8 @@ footer {
     width: 100%;
     background-color: #f1f1f1;
     text-align: center;
-    padding: 0.5em; /* Adjust padding as needed */
-    line-height: 1.2; /* Adjust line-height as needed */
+    padding: 0.5em;
+    line-height: 1.2;
 }
 
 .exercise {
@@ -116,41 +117,64 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer; /* make the entire header clickable */
+    cursor: pointer;
+}
+
+.header-content {
+    display: flex;
+}
+
+.exercise-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exercise-img {
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .expand-btn {
-    margin-right: auto; /* push the title and completed-indicator to the center and right respectively */
+    margin-right: 10px;
 }
 
 .exercise-title {
-    text-align: center;
-    flex-grow: 1; /* allow the title to take the available space */
+    margin-bottom: 5px;
 }
 
 .completed-indicator {
-    display: inline-block;
+    margin-left: auto; /* push the completed indicator to the right */
 }
 
-.sets.hidden,
-.completed-indicator.hidden {
+.sets.hidden, .completed-indicator.hidden {
     display: none;
 }
 
-.exercise-checkbox,
-.set-checkbox {
+.exercise-checkbox, .set-checkbox {
     margin-right: 10px;
 }
 
 .sets {
-    display: none; /* Initially hide the sets */
-}
-
-.exercise.expanded .sets {
-    display: block; /* Show the sets when the exercise is expanded */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #workoutGif {
     display: none;
+}
+
+/* Additional CSS for gif container and close button */
+#workoutGifContainer {
+    position: relative;
+}
+
+#closeGifBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5rem;
+    cursor: pointer;
 }
 

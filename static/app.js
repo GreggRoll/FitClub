@@ -56,48 +56,40 @@ function loadWorkouts(day) {
         .then(response => response.json())
         .then(workouts => {
             const container = document.getElementById('workoutsContainer');
-            container.innerHTML = ''; // Clear previous workouts
-            if (Object.keys(workouts).length > 0) { // If there are workouts
-                document.getElementById('workoutGif').style.display = 'block'; // Show the GIF
-                for (const [exercise, sets] of Object.entries(workouts)) {
-                    const exerciseDiv = document.createElement('div');
-                    exerciseDiv.className = 'exercise';
-                    
-                    const header = document.createElement('div');
-                    header.className = 'exercise-header';
-                
-                    const expandBtn = document.createElement('button');
-                    expandBtn.className = 'expand-btn';
-                    expandBtn.textContent = '+'; 
-                    header.appendChild(expandBtn);
-                
-                    const title = document.createElement('span');
-                    title.className = 'exercise-title';
-                    title.textContent = exercise;
-                    header.appendChild(title);
-                
-                    const completedIndicator = document.createElement('span');
-                    completedIndicator.className = 'completed-indicator';
-                    completedIndicator.textContent = 'Completed'; 
-                    header.appendChild(completedIndicator);
-                
-                    exerciseDiv.appendChild(header);
-                    
-                    const setsDiv = document.createElement('div');
-                    setsDiv.className = 'sets hidden';
-                    // ... rest of your logic to create sets ...
-                    exerciseDiv.appendChild(setsDiv);
-                    
-                    header.addEventListener('click', () => {
-                        setsDiv.classList.toggle('hidden');
-                        completedIndicator.classList.toggle('hidden');
-                        expandBtn.textContent = setsDiv.classList.contains('hidden') ? '+' : '-';
-                    });
-                    
-                    container.appendChild(exerciseDiv);
-                }          
+            const workoutGif = document.getElementById('workoutGif');
+            container.innerHTML = '';
+            if (Object.keys(workouts).length > 0) {
+                workoutGif.style.display = 'none';
+                fetch('exercise.html').then(response => response.text()).then(htmlTemplate => {
+                    for (const [exercise, sets] of Object.entries(workouts)) {
+                        let exerciseHTML = htmlTemplate.replace('[EXERCISE_NAME]', exercise);
+                        exerciseHTML = exerciseHTML.replace('[EXERCISE_IMG]', 'path_to_your_image'); //replace with actual path
+                        let setsHTML = '';
+                        sets.forEach(set => {
+                            setsHTML += `<div class="set">
+                                            <input type="checkbox" class="set-checkbox">
+                                            <span>${set}</span>
+                                        </div>`;
+                        });
+                        exerciseHTML = exerciseHTML.replace('<!-- [SETS] -->', setsHTML);
+                        container.innerHTML += exerciseHTML;
+                        
+                        // Find the newly added exercise div and add event listeners
+                        const exerciseDiv = container.lastChild;
+                        const header = exerciseDiv.querySelector('.exercise-header');
+                        const setsDiv = exerciseDiv.querySelector('.sets');
+                        const expandBtn = header.querySelector('.expand-btn');
+                        const completedIndicator = header.querySelector('.completed-indicator');
+                        
+                        header.addEventListener('click', () => {
+                            setsDiv.classList.toggle('hidden');
+                            completedIndicator.classList.toggle('hidden');
+                            expandBtn.textContent = setsDiv.classList.contains('hidden') ? '+' : '-';
+                        });
+                    }
+                });
             } else {
-                document.getElementById('workoutGif').style.display = 'none'; // Hide the GIF
+                workoutGif.style.display = 'block'; // Show the GIF because there are no workouts
             }
         });
 }
@@ -109,6 +101,8 @@ function colorCodeDays() {
         fetch(`/get_workouts/${day}`)
             .then(response => response.json())
             .then(workouts => {
+                console.log(workouts); // Log the workouts to see the returned data structure
+                // ... Your logic here ...
                 let button = document.querySelector(`button[data-day='${day}']`);
                 if (Object.keys(workouts).length > 0) { // If there are workouts
                     if (new Date().toLocaleString('en-us', { weekday: 'long' }) === day) {
@@ -123,9 +117,10 @@ function colorCodeDays() {
     });
 }
 
+
 // On page load, call the loadWorkouts function with the current day
 document.addEventListener('DOMContentLoaded', function () {
     let today = new Date().toLocaleString('en-us', { weekday: 'long' });
-    loadWorkouts(today);
-    colorCodeDays(); // Color code the days when the document is loaded.
+    loadWorkouts(today); // This should load the workout for the current day
+    colorCodeDays(); // This should color the current day button green
 });
