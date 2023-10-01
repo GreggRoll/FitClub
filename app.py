@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 from flask_socketio import SocketIO
+import datetime as dt
 import json
 import os
 
@@ -53,11 +54,14 @@ def register():
                 'password': password,
                 'user_name': username,
                 'name': '',
-                'height': '',
-                'weight': '',
-                'dl_max': '',
-                'squat_max': '',
-                'bench_max': '',
+                'current' : {
+                    'current': dt.now(),
+                    'height': '',
+                    'weight': '',
+                    'dl_max': '',
+                    'squat_max': '',
+                    'bench_max': '',
+                },
                 'chat_history': []
             }
             save_users(users)
@@ -76,18 +80,30 @@ def my_profile():
     
     if request.method == 'POST':
         user_data['name'] = request.form.get('name', user_data.get('name', ''))
-        user_data['height'] = request.form.get('height', user_data.get('height', ''))
-        user_data['weight'] = request.form.get('weight', user_data.get('weight', ''))
+        user_data['current']['height'] = request.form.get('height', user_data.get('current', {}).get('height', ''))
+        user_data['current']['weight'] = request.form.get('weight', user_data.get('current', {}).get('weight', ''))
+        user_data['current']['dl_max'] = request.form.get('dl_max', user_data.get('current', {}).get('dl_max', ''))
+        user_data['current']['squat_max'] = request.form.get('squat_max', user_data.get('current', {}).get('squat_max', ''))
+        user_data['current']['bench_max'] = request.form.get('bench_max', user_data.get('current', {}).get('bench_max', ''))
+        
+        # Append the current state to past and update the 'updated_date'
+        print(dt)
+        user_data['past'].append(dict(user_data['current']))
+        user_data['current']['updated_date'] = dt.datetime.now().strftime('%m/%d/%Y')
+        
         # Save the updated user data
         users[username] = user_data  # Update the user data in the users dictionary
         save_users(users)  # Save the updated users dictionary back to the file
         
     return render_template('my_profile.html', 
-                           username=username, 
-                           name=user_data.get('name', ''), 
-                           height=user_data.get('height', ''), 
-                           weight=user_data.get('weight', ''))
-                           # ... (other user data fields)
+        username=username, 
+        name=user_data.get('name', ''), 
+        height=user_data.get('current', {}).get('height', ''),
+        weight=user_data.get('current', {}).get('weight', ''),
+        dl_max=user_data.get('current', {}).get('dl_max', ''),
+        squat_max=user_data.get('current', {}).get('squat_max', ''),
+        bench_max=user_data.get('current', {}).get('bench_max', '')
+    )
 
 @app.route('/my_workouts')
 def my_workouts():
@@ -97,6 +113,22 @@ def my_workouts():
         workouts = users[username].get('workouts', [])
         return render_template('my_workouts.html', workouts=workouts)
     return redirect(url_for('login'))
+
+@app.route('/get_workouts/<string:day>')
+def get_workouts(day):
+    username = session.get('username')
+    if not username:
+        return jsonify(error='User not logged in'), 401  # 401 Unauthorized
+    
+    with open('user_data.json', 'r') as f:
+        users = json.load(f)
+        
+    user = users.get(username)
+    if not user:
+        return jsonify(error='User data not found'), 404  # 404 Not Found
+        
+    workouts = user.get('my_workouts', {}).get(day, {})
+    return jsonify(workouts)
 
 @socketio.on('message')
 def handle_message(message):

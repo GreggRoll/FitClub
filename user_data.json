@@ -1,1 +1,302 @@
-{"user1": {"user_name": "user1", "password": "hashed_password1", "name": "John Doe", "height": "5ft 10ing", "weight": "200 lbs", "dl_max": "200 lbs", "squat_max": "150 lbs", "bench_max": "100 lbs", "chat_history": [{"user": "How can I improve my bench press?"}, {"ai": "To improve your bench press, you can..."}]}, "user2": {"user_name": "user2", "password": "hashed_password2", "name": "Jane Doe", "height": "5ft 6in", "weight": "130 lbs", "dl_max": "180 lbs", "squat_max": "120 lbs", "bench_max": "80 lbs", "chat_history": [{"user": "Can you suggest a workout for legs?"}, {"ai": "Certainly! For a balanced leg workout, you can..."}]}}
+{
+    "user1": {
+        "user_name": "user1",
+        "password": "hashed_password1",
+        "name": "John Doe",
+        "current": {
+            "updated_date": "09/30/2023",
+            "height": "5ft 10ing",
+            "weight": "200 lbs",
+            "dl_max": "360 lbs",
+            "squat_max": "285 lbs",
+            "bench_max": "265 lbs"
+        },
+        "past": [
+            {
+                "updated_date": "01/01/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "09/30/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "350 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "09/30/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            }
+        ],
+        "chat_history": [
+            {
+                "user": "How can I improve my bench press?"
+            },
+            {
+                "ai": "To improve your bench press, you can..."
+            }
+        ],
+        "my_workouts": {
+            "Monday": {
+                "Bench Press": [
+                    "10x135",
+                    "8x165",
+                    "6x185"
+                ],
+                "Squat": [
+                    "10x115",
+                    "8x135",
+                    "6x155"
+                ],
+                "Bent Over Row": [
+                    "10x95",
+                    "8x115",
+                    "6x135"
+                ],
+                "Tricep Dips": [
+                    "3x10",
+                    "3x10",
+                    "3x10"
+                ],
+                "Bicep Curls": [
+                    "10x35",
+                    "8x40",
+                    "6x45"
+                ],
+                "Leg Raises": [
+                    "3x15",
+                    "3x15",
+                    "3x15"
+                ],
+                "Push-Ups": [
+                    "3x15",
+                    "3x15",
+                    "3x15"
+                ]
+            },
+            "Wednesday": {
+                "Deadlift": [
+                    "10x175",
+                    "8x205",
+                    "6x225"
+                ],
+                "Overhead Press": [
+                    "10x65",
+                    "8x75",
+                    "6x85"
+                ],
+                "Pull-Ups": [
+                    "3x8",
+                    "3x8",
+                    "3x8"
+                ],
+                "Leg Press": [
+                    "10x180",
+                    "8x210",
+                    "6x240"
+                ],
+                "Lateral Raises": [
+                    "3x12",
+                    "3x12",
+                    "3x12"
+                ],
+                "Sit-Ups": [
+                    "3x20",
+                    "3x20",
+                    "3x20"
+                ],
+                "Plank": [
+                    "3x60s",
+                    "3x60s",
+                    "3x60s"
+                ]
+            },
+            "Friday": {
+                "Bench Press": [
+                    "10x135",
+                    "8x165",
+                    "6x185"
+                ],
+                "Squat": [
+                    "10x115",
+                    "8x135",
+                    "6x155"
+                ],
+                "T-Bar Rows": [
+                    "10x80",
+                    "8x100",
+                    "6x120"
+                ],
+                "Skull Crushers": [
+                    "10x45",
+                    "8x55",
+                    "6x65"
+                ],
+                "Hammer Curls": [
+                    "10x30",
+                    "8x35",
+                    "6x40"
+                ],
+                "Hanging Leg Raises": [
+                    "3x10",
+                    "3x10",
+                    "3x10"
+                ],
+                "Diamond Push-Ups": [
+                    "3x12",
+                    "3x12",
+                    "3x12"
+                ]
+            }
+        },
+        "height": "5ft 10ing",
+        "weight": "200 lbs",
+        "dl_max": "",
+        "squat_max": "",
+        "bench_max": ""
+    },
+    "user2": {
+        "user_name": "user2",
+        "password": "hashed_password2",
+        "name": "Jane Doe",
+        "current": {
+            "updated_date": "01/01/2023",
+            "height": "5ft 6in",
+            "weight": "130 lbs",
+            "dl_max": "180 lbs",
+            "squat_max": "120 lbs",
+            "bench_max": "80 lbs"
+        },
+        "past": [],
+        "chat_history": [
+            {
+                "user": "Can you suggest a workout for legs?"
+            },
+            {
+                "ai": "Certainly! For a balanced leg workout, you can..."
+            }
+        ],
+        "my_workouts": {
+            "Monday": {
+                "Bench Press": [
+                    "10x40",
+                    "8x50",
+                    "6x60"
+                ],
+                "Squat": [
+                    "10x48",
+                    "8x58",
+                    "6x68"
+                ],
+                "Bent Over Row": [
+                    "10x40",
+                    "8x45",
+                    "6x50"
+                ],
+                "Tricep Dips": [
+                    "3x8",
+                    "3x8",
+                    "3x8"
+                ],
+                "Bicep Curls": [
+                    "10x15",
+                    "8x20",
+                    "6x25"
+                ],
+                "Leg Raises": [
+                    "3x12",
+                    "3x12",
+                    "3x12"
+                ],
+                "Push-Ups": [
+                    "3x10",
+                    "3x10",
+                    "3x10"
+                ]
+            },
+            "Wednesday": {
+                "Deadlift": [
+                    "10x90",
+                    "8x108",
+                    "6x126"
+                ],
+                "Overhead Press": [
+                    "10x30",
+                    "8x36",
+                    "6x42"
+                ],
+                "Pull-Ups": [
+                    "3x5",
+                    "3x5",
+                    "3x5"
+                ],
+                "Leg Press": [
+                    "10x72",
+                    "8x86",
+                    "6x100"
+                ],
+                "Lateral Raises": [
+                    "3x10",
+                    "3x10",
+                    "3x10"
+                ],
+                "Sit-Ups": [
+                    "3x15",
+                    "3x15",
+                    "3x15"
+                ],
+                "Plank": [
+                    "3x45s",
+                    "3x45s",
+                    "3x45s"
+                ]
+            },
+            "Friday": {
+                "Bench Press": [
+                    "10x40",
+                    "8x50",
+                    "6x60"
+                ],
+                "Squat": [
+                    "10x48",
+                    "8x58",
+                    "6x68"
+                ],
+                "T-Bar Rows": [
+                    "10x40",
+                    "8x48",
+                    "6x56"
+                ],
+                "Skull Crushers": [
+                    "10x20",
+                    "8x25",
+                    "6x30"
+                ],
+                "Hammer Curls": [
+                    "10x15",
+                    "8x17.5",
+                    "6x20"
+                ],
+                "Hanging Leg Raises": [
+                    "3x8",
+                    "3x8",
+                    "3x8"
+                ],
+                "Diamond Push-Ups": [
+                    "3x10",
+                    "3x10",
+                    "3x10"
+                ]
+            }
+        }
+    }
+}

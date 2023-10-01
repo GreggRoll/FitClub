@@ -32,22 +32,36 @@
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{ url_for('my_profile') }}">
-                                <div class="form-group">
+                                <div class="input-group">
                                     <label for="username">Username:</label>
                                     <input type="text" class="form-control" id="username" name="username" value="{{ username }}" readonly>
                                 </div>
-                                <div class="form-group">
+                                <div class="input-group">
                                     <label for="name">Name:</label>
                                     <input type="text" class="form-control" id="name" name="name" value="{{ name }}">
                                 </div>
-                                <div class="form-group">
+                                <div class="input-group">
                                     <label for="height">Height:</label>
                                     <input type="text" class="form-control" id="height" name="height" value="{{ height }}">
                                 </div>
-                                <div class="form-group">
+                                <div class="input-group">
                                     <label for="weight">Weight:</label>
                                     <input type="text" class="form-control" id="weight" name="weight" value="{{ weight }}">
                                 </div>
+                                <div class="input-group">
+                                    <label for="dl_max">Deadlift Max:</label>
+                                    <input type="text" class="form-control" id="dl_max" name="dl_max" value="{{ dl_max }}">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="squat_max">Squat Max:</label>
+                                    <input type="text" class="form-control" id="squat_max" name="squat_max" value="{{ squat_max }}">
+                                </div>
+                                
+                                <div class="input-group">
+                                    <label for="bench_max">Bench Max:</label>
+                                    <input type="text" class="form-control" id="bench_max" name="bench_max" value="{{ bench_max }}">
+                                </div>                                
                                 <button type="submit" class="btn btn-primary">Update Profile</button>
                             </form>
                         </div>

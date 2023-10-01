@@ -76,15 +76,22 @@ body {
     margin-bottom: 1rem;
 }
 
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Provides a gap between the label and the input */
+}
+
 label {
     display: inline-block;
+    margin: 0;
     width: 20%;
     text-align: right;
     margin-right: 1rem;
 }
 
 input {
-    width: 60%;
+    flex-grow: 1;
     padding: 0.5rem;
 }
 
@@ -97,3 +104,53 @@ footer {
     padding: 0.5em; /* Adjust padding as needed */
     line-height: 1.2; /* Adjust line-height as needed */
 }
+
+.exercise {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* make the entire header clickable */
+}
+
+.expand-btn {
+    margin-right: auto; /* push the title and completed-indicator to the center and right respectively */
+}
+
+.exercise-title {
+    text-align: center;
+    flex-grow: 1; /* allow the title to take the available space */
+}
+
+.completed-indicator {
+    display: inline-block;
+}
+
+.sets.hidden,
+.completed-indicator.hidden {
+    display: none;
+}
+
+.exercise-checkbox,
+.set-checkbox {
+    margin-right: 10px;
+}
+
+.sets {
+    display: none; /* Initially hide the sets */
+}
+
+.exercise.expanded .sets {
+    display: block; /* Show the sets when the exercise is expanded */
+}
+
+#workoutGif {
+    display: none;
+}
+

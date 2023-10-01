@@ -27,13 +27,21 @@
         <div class="container mt-5">
             <h1>Welcome to FitClub, {{ username }}!</h1>
             <!-- User Info and Workouts Section -->
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- User Info -->
+            <div id="workoutPlan">
+                <div id="days">
+                    <button class="day" data-day="Monday" onclick="loadWorkouts('Monday')">Monday</button>
+                    <button class="day" data-day="Tuesday" onclick="loadWorkouts('Tuesday')">Tuesday</button>
+                    <button class="day" data-day="Wednesday" onclick="loadWorkouts('Wednesday')">Wednesday</button>
+                    <button class="day" data-day="Thursday" onclick="loadWorkouts('Thursday')">Thursday</button>
+                    <button class="day" data-day="Friday" onclick="loadWorkouts('Friday')">Friday</button>
+                    <button class="day" data-day="Saturday" onclick="loadWorkouts('Saturday')">Saturday</button>
+                    <button class="day" data-day="Sunday" onclick="loadWorkouts('Sunday')">Sunday</button>                    
                 </div>
-                <div class="col-md-6">
-                    <!-- Workouts -->
+                <div id="workoutGif" style="text-align:center;">
+                    <iframe src="https://giphy.com/embed/3ofSB2RLYhBsDpGCHu" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a href="https://giphy.com/gifs/peteandpete-season-3-the-adventures-of-pete-and-3ofSB2RLYhBsDpGCHu">via GIPHY</a></p>
                 </div>
+                <div id="workoutsContainer"></div>
             </div>
         </div>
         
