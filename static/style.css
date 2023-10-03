@@ -1,13 +1,47 @@
+/* === GLOBAL STYLES === */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-#content {
-    flex: 1;
+.hidden {
+    display: none;
 }
 
+/* Adjustments for specific elements across the page */
+.navbar-nav {
+    margin-right: 20px; /* Adjust the value as needed */
+}
+
+.navbar {
+    min-width: 300px; /* Adjust the value as needed */
+}
+
+/* Style for individual day buttons */
+.day {
+    color: white;
+    text-align: center;   /* Centers the text inside the button. */
+    margin: 0 5px;        /* Adds a bit of horizontal spacing between buttons. */
+    border-radius: 5px;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; 
+    margin-top: 5px;     /* Adds a top margin. Adjust the value as needed. */
+    margin-bottom: 5px;
+}
+
+/* Style to center the buttons within their container */
+#days {
+    display: flex;
+    justify-content: center; /* Horizontally centers the buttons */
+    flex-wrap: wrap;         /* Allows buttons to wrap to the next line if there's not enough space */
+    padding-bottom: 10px; /* Adds 10px of bottom padding. Adjust as needed. */
+}
+
+/* === CHAT STYLES === */
 #chatContainer, #workoutGifContainer {
     position: fixed;
     bottom: 4rem;
@@ -24,7 +58,7 @@ body {
     cursor: pointer;
 }
 
-#chatWindow, #workoutGif {
+#chatWindow {
     display: none;
     position: absolute;
     bottom: 100%;
@@ -55,6 +89,7 @@ body {
     display: inline-block;
 }
 
+/* === PROFILE STYLES === */
 #profileContainer {
     width: 50%;
     margin: 2rem auto;
@@ -96,6 +131,7 @@ input {
     padding: 0.5rem;
 }
 
+/* === FOOTER STYLES === */
 footer {
     position: fixed;
     bottom: 0;
@@ -106,9 +142,9 @@ footer {
     line-height: 1.2;
 }
 
+/* === EXERCISE STYLES === */
 .exercise {
     border: 1px solid #ccc;
-    margin-bottom: 10px;
     padding: 10px;
     background-color: #f9f9f9;
 }
@@ -122,6 +158,11 @@ footer {
 
 .header-content {
     display: flex;
+    align-items: center;
+}
+
+.expand-btn, .completed-indicator {
+    align-self: center;
 }
 
 .exercise-info {
@@ -135,16 +176,8 @@ footer {
     max-height: 50px;
 }
 
-.expand-btn {
-    margin-right: 10px;
-}
-
 .exercise-title {
     margin-bottom: 5px;
-}
-
-.completed-indicator {
-    margin-left: auto; /* push the completed indicator to the right */
 }
 
 .sets.hidden, .completed-indicator.hidden {
@@ -159,6 +192,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+#workoutPlan {
+    margin-bottom: 200px;
 }
 
 #workoutGif {
@@ -177,4 +214,3 @@ footer {
     padding: 0.5rem;
     cursor: pointer;
 }
-

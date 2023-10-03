@@ -9,6 +9,13 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 socketio = SocketIO(app)
 
+#remove for production
+@app.after_request
+def add_header(response):
+    if 'Cache-Control' not in response.headers:
+        response.headers['Cache-Control'] = 'no-store'
+    return response
+
 # Load and save user data functions
 def load_users():
     with open('user_data.json', 'r') as f:
@@ -131,6 +138,27 @@ def get_workouts(day):
     workouts = user.get('my_workouts', {}).get(day, {})
     return jsonify(workouts)
 
+@app.route('/get_messages')
+def get_messages():
+    username = session.get('username')
+    if not username:
+        return jsonify(error='User not logged in'), 401  # 401 Unauthorized
+
+    users = load_users()
+    user = users.get(username)
+    if not user:
+        return jsonify(error='User data not found'), 404  # 404 Not Found
+
+    chat_history = user.get('chat_history', [])
+    return jsonify(chat_history)
+
+@app.route('/exercise.html')
+def exercise_page():
+    try:
+        return render_template('exercise.html')
+    except:
+        return "Placeholder content for exercise.html"
+
 @socketio.on('message')
 def handle_message(message):
     if 'username' in session:
@@ -155,4 +183,4 @@ def save_workout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    socketio.run(app, debug=False)
+    socketio.run(app, host='0.0.0.0', port=5000, debug=False)

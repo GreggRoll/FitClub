@@ -1,0 +1,18 @@
+:5000/get_messages:1     Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+localhost/:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+app.js:110 ObjectBench Press: (3) ['10x135', '8x165', '6x185']Bent Over Row: (3) ['10x95', '8x115', '6x135']Bicep Curls: (3) ['10x35', '8x40', '6x45']Leg Raises: (3) ['3x15', '3x15', '3x15']Push-Ups: (3) ['3x15', '3x15', '3x15']Squat: (3) ['10x115', '8x135', '6x155']Tricep Dips: (3) ['3x10', '3x10', '3x10'][[Prototype]]: Object
+app.js:110 Object
+app.js:110 Object
+app.js:110 Object
+app.js:110 Object
+app.js:110 Object
+app.js:110 Object
+:5000/exercise.html:1     Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+app.js:87 Uncaught (in promise) TypeError: Cannot read properties of null (reading 'querySelector')
+    at app.js:87:54
+:5000/exercise.html:1     Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+app.js:87 Uncaught (in promise) TypeError: Cannot read properties of null (reading 'querySelector')
+    at app.js:87:54
+:5000/exercise.html:1     Failed to load resource: the server responded with a status of 404 (NOT FOUND)
+app.js:87 Uncaught (in promise) TypeError: Cannot read properties of null (reading 'querySelector')
+    at app.js:87:54
