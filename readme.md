@@ -7,7 +7,7 @@ FitClub is a web-based workout app that provides daily exercise routines. With a
 <div style="display: flex;">
     <img src="wire frame\login.PNG" alt="Image 1" width="25%">
     <img src="wire frame\home.PNG" alt="Image 2" width="25%">
-    <img src="wire frame\home2.PNG.jpg" alt="Image 3" width="25%">
+    <img src="wire frame\home2.PNG" alt="Image 3" width="25%">
     <img src="wire frame\profile.PNG" alt="Image 3" width="25%">
 </div>
 
