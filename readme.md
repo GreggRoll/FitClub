@@ -4,6 +4,13 @@
 
 FitClub is a web-based workout app that provides daily exercise routines. With an intuitive interface, users can easily navigate through daily workouts, track their progress, and chat with trainers for advice.
 
+<div style="display: flex;">
+    <img src="wire frame\login.PNG" alt="Image 1" width="25%">
+    <img src="wire frame\home.PNG" alt="Image 2" width="25%">
+    <img src="wire frame\home2.PNG.jpg" alt="Image 3" width="25%">
+    <img src="wire frame\profile.PNG" alt="Image 3" width="25%">
+</div>
+
 ## Expected Features
 
 - **Daily Workouts**: Seven days of the week, seven different workouts. Each day features a unique set of exercises to keep users engaged and challenged.
