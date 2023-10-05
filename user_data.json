@@ -1,10 +1,10 @@
 {
     "user1": {
-        "user_name": "user1",
+        "user_name": "TestUser",
         "password": "hashed_password1",
-        "name": "John Doe",
+        "name": "John Dgg",
         "current": {
-            "updated_date": "09/30/2023",
+            "updated_date": "10/04/2023",
             "height": "5ft 10ing",
             "weight": "200 lbs",
             "dl_max": "360 lbs",
@@ -30,6 +30,54 @@
             },
             {
                 "updated_date": "09/30/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "09/30/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "10/04/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "10/04/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "10/04/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "10/04/2023",
+                "height": "5ft 10ing",
+                "weight": "200 lbs",
+                "dl_max": "360 lbs",
+                "squat_max": "285 lbs",
+                "bench_max": "265 lbs"
+            },
+            {
+                "updated_date": "10/04/2023",
                 "height": "5ft 10ing",
                 "weight": "200 lbs",
                 "dl_max": "360 lbs",

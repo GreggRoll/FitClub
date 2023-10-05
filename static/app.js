@@ -1,3 +1,5 @@
+var socket = io.connect('http://localhost:5000');
+
 function toggleChat() {
     var chatWindow = document.getElementById('chatWindow');
     chatWindow.style.display = chatWindow.style.display === 'none' ? 'block' : 'none';
@@ -24,7 +26,7 @@ function sendMessage() {
 
     // Append the new message to the messages div
     var messagesDiv = document.getElementById('messages');
-    messagesDiv.innerHTML += '<p>' + message + '</p>';
+    messagesDiv.innerHTML += '<p><strong>User:</strong> ' + message + '</p>';
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
@@ -35,8 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(messages => {
             var messagesDiv = document.getElementById('messages');
             messages.forEach(message => {
-                // Assuming message is a string. If it's an object, you may need to adjust this line accordingly.
-                messagesDiv.innerHTML += '<p>' + message + '</p>';
+                if (message.user) {
+                    messagesDiv.innerHTML += '<p><strong>User:</strong> ' + message.user + '</p>';
+                } else if (message.ai) {
+                    messagesDiv.innerHTML += '<p><strong>AI:</strong> ' + message.ai + '</p>';
+                }
             });
             messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to the bottom to see the latest messages
         });
@@ -45,75 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('messageInput').addEventListener('keypress', handleKeyPress);
 });
 
-// function loadWorkouts(day) {
-//     // Existing logic to remove 'selected' class from all buttons
-//     document.querySelectorAll('.day').forEach(el => el.classList.remove('selected'));
-//     // Existing logic to add 'selected' class to the clicked button
-//     document.querySelector(`button[data-day='${day}']`).classList.add('selected');
-
-//     // Fetch the workouts for the selected day and populate the workoutsContainer
-//     fetch(`/get_workouts/${day}`)
-//         .then(response => response.json())
-//         .then(workouts => {
-//             const container = document.getElementById('workoutsContainer');
-//             const workoutGif = document.getElementById('workoutGif');
-//             container.innerHTML = '';
-//             if (Object.keys(workouts).length > 0) {
-//                 workoutGif.style.display = 'none';
-//                 fetch('exercise.html')
-//                     .then(response => response.text())
-//                     .then(htmlTemplate => {
-//                         for (const [exercise, sets] of Object.entries(workouts)) {
-//                             let exerciseHTML = htmlTemplate.replace('[EXERCISE_NAME]', exercise);
-                            
-//                             // remove
-//                             console.log("Fetched Template:", htmlTemplate);
-                            
-//                             // Replace with the appropriate image URL if available
-//                             let imageUrl = "https://www.kettlebellkings.com/cdn/shop/articles/barbell-deadlift-movement.gif?v=1692228918&width=700";
-//                             exerciseHTML = exerciseHTML.replace('src="https://www.kettlebellkings.com/cdn/shop/articles/barbell-deadlift-movement.gif?v=1692228918&width=700"', `src="${imageUrl}"`);
-                            
-//                             let setsHTML = sets.map(set => `
-//                                 <div class="set">
-//                                     <input type="checkbox" class="set-checkbox">
-//                                     <span>${set}</span>
-//                                 </div>
-//                             `).join('');
-                            
-//                             // remove
-//                             console.log("Sets Data:", setsHTML);
-
-//                             exerciseHTML = exerciseHTML.replace("<!--[SETS]-->", setsHTML);
-
-//                             // remove
-//                             console.log("Sets Data:", setsHTML);
-
-//                             let exerciseDiv = document.createElement('div');
-//                             exerciseDiv.innerHTML = exerciseHTML;
-//                             container.appendChild(exerciseDiv);
-
-//                             // Find the newly added exercise div and add event listeners
-//                             const header = exerciseDiv.querySelector('.exercise-header');
-//                             const setsDiv = exerciseDiv.querySelector('.sets');
-//                             const expandBtn = header.querySelector('.expand-btn');
-//                             const completedIndicator = header.querySelector('.completed-indicator');
-
-//                             header.addEventListener('click', () => {
-//                                 setsDiv.classList.toggle('hidden');
-//                                 completedIndicator.classList.toggle('hidden');
-//                                 expandBtn.textContent = setsDiv.classList.contains('hidden') ? '+' : '-';
-//                             });
-//                         }
-//                     });
-//             } else {
-//                 workoutGif.style.display = 'block'; // Show the GIF because there are no workouts
-//             }
-//         });
-// }
-
-// Color code the days on page load
+// Assuming you've established a socket connection named 'socket'
+socket.on('ai_message', function(ai_response) {
+    var messagesDiv = document.getElementById('messages');
+    messagesDiv.innerHTML += '<p><strong>AI:</strong> ' + ai_response + '</p>';
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+});
 
 function loadWorkouts(day) {
+    console.log("loadWorkouts started for", day);
+    colorCodeDays();
     // Existing logic to remove 'selected' class from all buttons
     document.querySelectorAll('.day').forEach(el => el.classList.remove('selected'));
     // Existing logic to add 'selected' class to the clicked button
@@ -178,9 +124,11 @@ function loadWorkouts(day) {
                     }
                 });
         });
+    console.log("loadWorkouts ended for", day);
 }
 
 function colorCodeDays() {
+    console.log("call colorCodeDays");
     let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     days.forEach(day => {
         let button = document.querySelector(`button[data-day='${day}']`);
@@ -205,11 +153,12 @@ function colorCodeDays() {
                 });
         }
     });
+    console.log("colors loaded");
 }
 
 // On page load, call the loadWorkouts function with the current day
 document.addEventListener('DOMContentLoaded', function () {
     let today = new Date().toLocaleString('en-us', { weekday: 'long' });
-    loadWorkouts(today); // This should load the workout for the current day
     colorCodeDays(); // This should color the current day button green
+    loadWorkouts(today); // This should load the workout for the current day
 });

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 from flask_socketio import SocketIO
-from openai import *
+from openaiScripts import interact_with_openai
 import datetime as dt
 import json
 import os
@@ -165,11 +165,20 @@ def handle_message(message):
         username = session['username']
         users = load_users()
         user_data = users.get(username, {})
+        
+        # Save user's message
         user_data['chat_history'].append({"user": message})
+        
+        # Get OpenAI response
+        ai_response = interact_with_openai(message, username)
+        user_data['chat_history'].append({"ai": ai_response})
+
+        # Save to user_data.json
         save_users(users)
-        # Here, you can call OpenAI API to generate workout plans based on the message
-        # Emit the message back along with Save Workout button
-        socketio.emit('message', message)
+        
+        # Emit both user's message and AI's response
+        socketio.emit('user_message', message)
+        socketio.emit('ai_message', ai_response)
 
 @app.route('/save_workout', methods=['POST'])
 def save_workout():
@@ -183,4 +192,4 @@ def save_workout():
     return redirect(url_for('login'))
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000, debug=False)
+    socketio.run(app)

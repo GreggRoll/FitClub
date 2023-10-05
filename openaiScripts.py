@@ -9,12 +9,10 @@ with open("config.yml", 'r') as ymlfile:
 
 openai.api_key = cfg['openai_secret_key']
 
-
 def read_user_data(user_id):
     with open('user_data.json', 'r') as f:
         user_data = json.load(f)
     return user_data.get(str(user_id), {})
-
 
 def write_user_data(user_id, user_specific_data):
     with open('user_data.json', 'r') as f:
@@ -22,7 +20,6 @@ def write_user_data(user_id, user_specific_data):
     user_data[str(user_id)] = user_specific_data
     with open('user_data.json', 'w') as f:
         json.dump(user_data, f, indent=4)
-
 
 def interact_with_openai(user_query, user_id):
     user_specific_data = read_user_data(user_id)

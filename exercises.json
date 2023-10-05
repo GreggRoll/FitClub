@@ -1,0 +1,304 @@
+{
+    "squats": {
+        "key": "001",
+        "name": "Squats",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "glutes", "lower back"],
+        "description": "Stand with feet shoulder-width apart and perform a sitting motion, keeping your back straight and knees behind toes."
+    },
+    "pushups": {
+        "key": "002",
+        "name": "Push-ups",
+        "targeted_muscle_groups": ["chest", "triceps", "shoulders"],
+        "description": "Starting in a plank position, lower your body to the ground by bending your elbows. Push yourself back up."
+    },
+    "deadlifts": {
+        "key": "003",
+        "name": "Deadlifts",
+        "targeted_muscle_groups": ["hamstrings", "glutes", "lower back", "traps", "forearms"],
+        "description": "With feet hip-width apart, bend and grasp a barbell. Lift by extending hips and knees to full extension. Keep your back straight throughout."
+    },
+    "bench_press": {
+        "key": "004",
+        "name": "Bench Press",
+        "targeted_muscle_groups": ["chest", "triceps", "shoulders"],
+        "description": "Lie on a bench with a barbell above you. Lower the bar to your chest, then press it back up."
+    },
+    "pullups": {
+        "key": "005",
+        "name": "Pull-ups",
+        "targeted_muscle_groups": ["back", "biceps", "shoulders"],
+        "description": "Grasp a bar above you with a wide grip. Pull yourself up until your chin is above the bar."
+    },
+    "lunges": {
+        "key": "006",
+        "name": "Lunges",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "glutes"],
+        "description": "Step forward with one leg and lower your body until your rear knee nearly touches the ground and your front thigh is parallel to the ground."
+    },
+    "shoulder_press": {
+        "key": "007",
+        "name": "Shoulder Press",
+        "targeted_muscle_groups": ["shoulders", "triceps"],
+        "description": "From a seated or standing position, press a pair of dumbbells or a barbell from shoulder height to overhead."
+    },
+    "leg_curls": {
+        "key": "008",
+        "name": "Leg Curls",
+        "targeted_muscle_groups": ["hamstrings"],
+        "description": "Using a leg curl machine, lie face down and curl weights up with your legs."
+    },
+    "bicep_curls": {
+        "key": "009",
+        "name": "Bicep Curls",
+        "targeted_muscle_groups": ["biceps"],
+        "description": "Holding a pair of dumbbells, curl the weights toward your shoulders."
+    },
+    "tricep_dips": {
+        "key": "010",
+        "name": "Tricep Dips",
+        "targeted_muscle_groups": ["triceps"],
+        "description": "Using parallel bars or the edge of a bench, lower yourself down and then push back up to starting position."
+    },
+    "leg_press": {
+        "key": "011",
+        "name": "Leg Press",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "glutes"],
+        "description": "Using a leg press machine, push the weighted platform away, then return to start."
+    },
+    "lat_pulldown": {
+        "key": "012",
+        "name": "Lat Pulldown",
+        "targeted_muscle_groups": ["back", "biceps"],
+        "description": "Pull a weighted bar down from above to chest level."
+    },
+    "dumbbell_flyes": {
+        "key": "013",
+        "name": "Dumbbell Flyes",
+        "targeted_muscle_groups": ["chest"],
+        "description": "Lying on a bench, extend arms out and bring dumbbells together above chest."
+    },
+    "dumbbell_rows": {
+        "key": "014",
+        "name": "Dumbbell Rows",
+        "targeted_muscle_groups": ["back", "biceps"],
+        "description": "Bend over and pull dumbbell to hip using one arm."
+    },
+    "leg_extensions": {
+        "key": "015",
+        "name": "Leg Extensions",
+        "targeted_muscle_groups": ["quadriceps"],
+        "description": "Using a leg extension machine, extend legs to straight position."
+    },
+    "situps": {
+        "key": "016",
+        "name": "Sit-ups",
+        "targeted_muscle_groups": ["abs"],
+        "description": "Lying on back, lift torso toward knees."
+    },
+    "planks": {
+        "key": "017",
+        "name": "Planks",
+        "targeted_muscle_groups": ["abs", "lower back"],
+        "description": "Hold body in a straight line using arms and toes."
+    },
+    "side_lateral_raises": {
+        "key": "018",
+        "name": "Side Lateral Raises",
+        "targeted_muscle_groups": ["shoulders"],
+        "description": "Holding dumbbells, raise arms out to the sides."
+    },
+    "dumbbell_shrugs": {
+        "key": "019",
+        "name": "Dumbbell Shrugs",
+        "targeted_muscle_groups": ["traps"],
+        "description": "Hold dumbbells and shrug shoulders."
+    },
+    "face_pulls": {
+        "key": "020",
+        "name": "Face Pulls",
+        "targeted_muscle_groups": ["rear deltoids", "traps"],
+        "description": "Pull a rope toward face using a cable machine."
+    },
+    "dumbbell_curls": {
+        "key": "021",
+        "name": "Dumbbell Curls",
+        "targeted_muscle_groups": ["biceps"],
+        "description": "Curl dumbbells toward shoulders."
+    },
+    "overhead_tricep_extension": {
+        "key": "022",
+        "name": "Overhead Tricep Extension",
+        "targeted_muscle_groups": ["triceps"],
+        "description": "Hold a dumbbell behind head and extend arms."
+    },
+    "calf_raises": {
+        "key": "023",
+        "name": "Calf Raises",
+        "targeted_muscle_groups": ["calves"],
+        "description": "Lift heels by standing on toes."
+    },
+    "reverse_flyes": {
+        "key": "024",
+        "name": "Reverse Flyes",
+        "targeted_muscle_groups": ["rear deltoids"],
+        "description": "Holding dumbbells, extend arms out to the sides."
+    },
+    "bicycle_crunches": {
+        "key": "025",
+        "name": "Bicycle Crunches",
+        "targeted_muscle_groups": ["abs", "obliques"],
+        "description": "Lying on back, alternate elbow to opposite knee."
+    },
+    "dumbbell_step_ups": {
+        "key": "026",
+        "name": "Dumbbell Step Ups",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "glutes"],
+        "description": "Step up onto a platform holding dumbbells."
+    },
+    "barbell_rows": {
+        "key": "027",
+        "name": "Barbell Rows",
+        "targeted_muscle_groups": ["back", "biceps"],
+        "description": "Bend over and pull barbell to hip."
+    },
+    "dumbbell_press": {
+        "key": "028",
+        "name": "Dumbbell Press",
+        "targeted_muscle_groups": ["chest", "triceps"],
+        "description": "Press dumbbells up while lying on a bench."
+    },
+    "skullcrushers": {
+        "key": "029",
+        "name": "Skullcrushers",
+        "targeted_muscle_groups": ["triceps"],
+        "description": "Lying on bench, lower a barbell to forehead then extend arms."
+    },
+    "box_jumps": {
+        "key": "030",
+        "name": "Box Jumps",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "calves"],
+        "description": "Jump onto a raised platform from a standing position."
+    },
+    "russian_twists": {
+        "key": "031",
+        "name": "Russian Twists",
+        "targeted_muscle_groups": ["obliques"],
+        "description": "Sitting on the floor, twist torso side to side holding a weight."
+    },
+    "dumbbell_lunges": {
+        "key": "032",
+        "name": "Dumbbell Lunges",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "glutes"],
+        "description": "Step forward holding dumbbells and lower into a lunge."
+    },
+    "barbell_curls": {
+        "key": "033",
+        "name": "Barbell Curls",
+        "targeted_muscle_groups": ["biceps"],
+        "description": "Curl a barbell toward shoulders."
+    },
+    "t_bar_rows": {
+        "key": "034",
+        "name": "T-Bar Rows",
+        "targeted_muscle_groups": ["back", "biceps"],
+        "description": "Using a T-bar machine, pull the weighted bar to your chest."
+    },
+    "hammer_curls": {
+        "key": "035",
+        "name": "Hammer Curls",
+        "targeted_muscle_groups": ["biceps", "forearms"],
+        "description": "Holding dumbbells with a neutral grip, curl them to your shoulders."
+    },
+    "seated_leg_curls": {
+        "key": "036",
+        "name": "Seated Leg Curls",
+        "targeted_muscle_groups": ["hamstrings"],
+        "description": "On a seated leg curl machine, curl weights down using your legs."
+    },
+    "pec_deck_flyes": {
+        "key": "037",
+        "name": "Pec Deck Flyes",
+        "targeted_muscle_groups": ["chest"],
+        "description": "Using a pec deck machine, bring padded handles together in front of you."
+    },
+    "leg_raises": {
+        "key": "038",
+        "name": "Leg Raises",
+        "targeted_muscle_groups": ["abs", "hip flexors"],
+        "description": "Lying on back, raise legs to vertical position and lower without touching the ground."
+    },
+    "farmers_walk": {
+        "key": "039",
+        "name": "Farmer's Walk",
+        "targeted_muscle_groups": ["forearms", "traps", "core"],
+        "description": "Holding heavy weights, walk for a set distance or time."
+    },
+    "dumbbell_deadlifts": {
+        "key": "040",
+        "name": "Dumbbell Deadlifts",
+        "targeted_muscle_groups": ["hamstrings", "glutes", "lower back"],
+        "description": "Hold dumbbells in front and with a straight back, bend and lift using your legs and hips."
+    },
+    "barbell_shrugs": {
+        "key": "041",
+        "name": "Barbell Shrugs",
+        "targeted_muscle_groups": ["traps"],
+        "description": "Holding a barbell, shrug your shoulders upwards."
+    },
+    "dumbbell_side_bends": {
+        "key": "042",
+        "name": "Dumbbell Side Bends",
+        "targeted_muscle_groups": ["obliques"],
+        "description": "Holding a dumbbell in one hand, bend side-to-side."
+    },
+    "incline_bench_press": {
+        "key": "043",
+        "name": "Incline Bench Press",
+        "targeted_muscle_groups": ["upper chest", "triceps"],
+        "description": "On an inclined bench, press weights from chest level to overhead."
+    },
+    "decline_situps": {
+        "key": "044",
+        "name": "Decline Sit-ups",
+        "targeted_muscle_groups": ["abs"],
+        "description": "On a declined bench, perform sit-ups."
+    },
+    "cable_crossover": {
+        "key": "045",
+        "name": "Cable Crossover",
+        "targeted_muscle_groups": ["chest"],
+        "description": "Using two cable machines, pull handles in a fly motion in front of you."
+    },
+    "goblet_squats": {
+        "key": "046",
+        "name": "Goblet Squats",
+        "targeted_muscle_groups": ["quadriceps", "hamstrings", "glutes"],
+        "description": "Hold a single dumbbell or kettlebell in front and perform a squat."
+    },
+    "cable_tricep_pushdown": {
+        "key": "047",
+        "name": "Cable Tricep Pushdown",
+        "targeted_muscle_groups": ["triceps"],
+        "description": "Using a cable machine, push the handle down using your triceps."
+    },
+    "hyperextensions": {
+        "key": "048",
+        "name": "Hyperextensions",
+        "targeted_muscle_groups": ["lower back", "glutes"],
+        "description": "On a hyperextension bench, raise your upper body using your lower back muscles."
+    },
+    "ez_bar_curls": {
+        "key": "049",
+        "name": "EZ Bar Curls",
+        "targeted_muscle_groups": ["biceps"],
+        "description": "Using an EZ bar, curl the weight toward your shoulders."
+    },
+    "seated_dumbbell_press": {
+        "key": "050",
+        "name": "Seated Dumbbell Press",
+        "targeted_muscle_groups": ["shoulders", "triceps"],
+        "description": "While seated, press dumbbells from shoulder height to overhead."
+
+    }
+    
+}
